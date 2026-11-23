@@ -321,15 +321,6 @@
   </div>
 </section>
 
-<section style="padding-top:0">
-  <div class="wrap">
-    <div class="head">
-      <div class="divider"><span class="kicker" data-i18n="whyKicker"></span></div>
-      <h2 data-i18n-html="whyTitle"></h2>
-    </div>
-    <div class="why" id="whyGrid"></div>
-  </div>
-</section>
 
 <section class="alt">
   <div class="wrap">
@@ -417,13 +408,6 @@ const T = {
     teamKicker: "A equipa", teamTitle: 'By <span class="gold">Alda &amp; Co</span>',
     teamSub: "Uma equipa pequena, simpática e dedicada — e que fala inglês.",
     team: [["Alda", "Proprietária · Cabeleireira"], ["Amanda", "Técnica de unhas"], ["Tânia", "Estética"]],
-    whyKicker: "Porquê nós", whyTitle: 'O que as clientes mais <span class="gold">elogiam</span>',
-    why: [
-      ["Atendimento caloroso", "Recebemos cada cliente como em casa, com tempo e sem pressa."],
-      ["Trabalho detalhado", "Do corte à manicure, cada detalhe é feito com cuidado."],
-      ["Flexibilidade", "Tentamos sempre encaixar marcações de última hora."],
-      ["We speak English", "Clientes estrangeiras são sempre bem-vindas."]
-    ],
     reviewsKicker: "Avaliações", reviewsTitle: '<span class="gold">5.0</span> em 73 avaliações',
     client: "Cliente no Google", allReviews: "Ver todas as avaliações no Google →",
     bookKicker: "Marcações", bookTitle: 'Marque em <span class="gold">segundos</span>',
@@ -454,13 +438,6 @@ const T = {
     teamKicker: "The team", teamTitle: 'By <span class="gold">Alda &amp; Co</span>',
     teamSub: "A small, friendly, dedicated team — and we speak English.",
     team: [["Alda", "Owner · Hairstylist"], ["Amanda", "Nail technician"], ["Tânia", "Beauty therapist"]],
-    whyKicker: "Why us", whyTitle: 'What our clients <span class="gold">love</span>',
-    why: [
-      ["Warm welcome", "We treat every client like family, taking our time with no rush."],
-      ["Detailed work", "From haircut to manicure, every detail is done with care."],
-      ["Flexibility", "We always try to fit in last-minute bookings."],
-      ["We speak English", "International clients are always welcome."]
-    ],
     reviewsKicker: "Reviews", reviewsTitle: '<span class="gold">5.0</span> from 73 reviews',
     client: "Google review", allReviews: "See all reviews on Google →",
     bookKicker: "Bookings", bookTitle: 'Book in <span class="gold">seconds</span>',
@@ -540,8 +517,6 @@ function render() {
   document.getElementById("teamGrid").innerHTML = t.team.map(([name, role]) => `
     <div class="member"><div class="av"><div>${name[0]}</div></div><h3>${name}</h3><p>${role}</p></div>`).join("");
 
-  document.getElementById("whyGrid").innerHTML = t.why.map(([h, p], i) =>
-    `<div><div class="n gold">0${i + 1}</div><h3>${h}</h3><p>${p}</p></div>`).join("");
 
   document.getElementById("chips").innerHTML = t.chips.map((c, i) =>
     `<button type="button" class="chip${chosen.has(i) ? " on" : ""}" data-i="${i}" aria-pressed="${chosen.has(i)}">${c}</button>`).join("");
